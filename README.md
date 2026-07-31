@@ -8,6 +8,7 @@ NourishBot goes beyond food recognition: it offers dynamic advice from dietary p
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Multi-Agent Workflows](#multi-agent-workflows)
@@ -18,6 +19,42 @@ NourishBot goes beyond food recognition: it offers dynamic advice from dietary p
 - [Agents & Tools](#agents--tools)
 - [Configuration](#configuration)
 - [Disclaimer](#disclaimer)
+
+---
+
+## Demo
+
+Walkthrough of the Gradio UI — from welcome screen to recipe results.
+
+### 1. Welcome & how it works
+
+The app greets users and explains both workflows: **recipe** (fridge → meal ideas) and **analysis** (dish → nutrition).
+
+![Welcome screen — How it works](docs/demo/01-welcome.jpg)
+
+### 2. Upload a fridge photo
+
+Users upload an image of fridge or pantry contents. The vision agent uses this as the starting point for ingredient detection.
+
+![Fridge image upload](docs/demo/02-fridge-upload.jpg)
+
+### 3. Set diet & workflow
+
+Optional dietary restrictions (e.g. `vegan`) and workflow type (`recipe` or `analysis`) are selected before running the crew.
+
+![Dietary restrictions and workflow selection](docs/demo/03-inputs-workflow.jpg)
+
+### 4. Try built-in examples
+
+Four examples autofill inputs: fridge photos pair with **recipe** (vegan / keto); plated dishes pair with **analysis**.
+
+![Example gallery for recipe and analysis](docs/demo/04-examples.jpg)
+
+### 5. Recipe results
+
+After the multi-agent recipe crew finishes, structured output appears as ingredient tables and step-by-step instructions.
+
+![Recipe output with ingredients and instructions](docs/demo/05-recipe-output.jpg)
 
 ---
 
@@ -223,6 +260,7 @@ AI-NourishBot-with-CrewAI/
 ├── .env.example                # Credential template (copy → .env)
 ├── .gitignore
 ├── README.md
+├── docs/demo/                  # UI screenshots for the README walkthrough
 ├── examples/                   # Sample images for Gradio Examples
 │   └── .gitkeep
 ├── uploads/                    # Ephemeral uploads (gitignored)
