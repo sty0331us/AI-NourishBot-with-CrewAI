@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-nourishbot-crewai"
+version = "1.0.0"
+description = "Multi-agent nutrition and recipe assistant built with CrewAI, watsonx.ai, and Gradio"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "NourishBot Contributors" }]
+dependencies = [
+    "crewai>=0.80.0",
+    "gradio>=4.44.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+    "Pillow>=10.0.0",
+    "ibm-watsonx-ai>=1.1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
